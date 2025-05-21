@@ -1,6 +1,6 @@
 import os, sys
 
-# Import version following relative path ../../ksrates/ksrates/_version.py
+# Import version following relative path ../ksrates/ksrates/_version.py
 p = os.path.abspath('..')
 sys.path.insert(1, p)
 from ksrates._version import __version__
@@ -30,6 +30,19 @@ latex_elements = {
     '''
 }
 
+# Add kstates white logo
+html_static_path = ['_static']
+html_css_files = ["custom.css"]
+html_logo = "_static/logo_ksrates_long_inverted.svg"
+html_theme_options = {
+    'logo_only': True # Show only logo and not package name
+}
+
+# Add copy-button in code blocks
+extensions = [
+    'sphinx_copybutton'
+]
+
 # For local export to PDF:
 # import rst2pdf
 # extensions = [
@@ -41,4 +54,4 @@ latex_elements = {
 # pip install -U sphinx==6.2.1
 # For LaTeX: sphinx-build -M latexpdf source/ abs/path/outdir
 # It will generate the PDF version in outdir/latex
-# For HTML: sphinx-build -b html source/ outdir
+# For HTML: sphinx-build -b html docs/ docs/outdir

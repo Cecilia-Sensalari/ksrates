@@ -83,7 +83,7 @@ We briefly illustrate here how to run the *ksrates* Nextflow pipeline on the `te
 
       The `test` directory already contains:
       
-      * A pre-filled *ksrates* configuration file (`config_elaeis.txt`) for the oil palm use case.
+      * A pre-filled *ksrates* configuration file (`config_files/config_elaeis.txt`) for the oil palm use case.
 
       * A Nextflow configuration file template (`nextflow.config`) to configure the executor to be used (i.e., a local computer or a compute cluster) and its resources made available to Nextflow such as the number of CPUs. It also configures whether to use the *ksrates* Singularity or Docker container. The configuration file may need to be adapted to your available resources.
 
@@ -153,7 +153,7 @@ Show usage and all available `COMMAND`s and `OPTIONS`:
 
 Generate a template configuration file for the focal species:
 
-	ksrates generate-config config_elaeis.txt
+	ksrates generate-config config_files/config_elaeis.txt
 
 Show usage and `ARGS` for a specific `COMMAND`:
 
@@ -161,7 +161,7 @@ Show usage and `ARGS` for a specific `COMMAND`:
 
 Run the ortholog *K*<sub>S</sub> analysis between two species using four threads/CPU cores:
 
-	ksrates orthologs-ks config_elaeis.txt elaeis oryza --n-threads 4
+	ksrates orthologs-ks config_files/config_elaeis.txt elaeis oryza --n-threads 4
 
 Please see the [full documentation](https://ksrates.readthedocs.io/) for more details and the complete set of commands.
 
